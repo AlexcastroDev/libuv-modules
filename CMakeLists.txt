@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.24)
+project(libuv-modules)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".dylib")
+link_directories(/usr/local/lib)
+
+set(SOURCES main.cpp)
+add_executable(libuv-modules ${SOURCES})
+include_directories(/usr/local/include)
+target_link_libraries(libuv-modules uv)
